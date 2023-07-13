@@ -1,0 +1,12 @@
+#!/bin/bash
+path_dirs=$(echo "$PATH" | tr ':' '\n')
+count=0
+
+for dir in $path_dirs; do
+    if [[ -n "$dir" && -d "$dir" ]]; then
+        count=$((count+1))
+    fi
+done
+
+echo "$count"
+
